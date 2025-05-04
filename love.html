@@ -43,76 +43,38 @@
       line-height: 2;
       color: #444;
     }
-    /* เพิ่มลูกเล่นอวาตาร์ */
-    .avatars {
+    .gallery {
       text-align: center;
-      margin-top: 20px;
+      padding: 30px;
     }
-    .avatars img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 10px;
-    }
-    /* เอฟเฟกต์พิเศษ */
-    @keyframes heart {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-    .heart-effect {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      font-size: 30px;
-      animation: heart 1s infinite;
-    }
-    @keyframes snow {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(100%); }
-    }
-    .snow-effect {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: -1;
-      pointer-events: none;
-      animation: snow 10s linear infinite;
-    }
-    .snow-effect:before {
-      content: "❄️❄️❄️❄️❄️";
-      font-size: 50px;
-      position: absolute;
-      top: -50px;
-      left: 0;
-      right: 0;
-    }
-    /* ปฏิทินความทรงจำ */
-    .calendar {
-      background-color: #fff8f0;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      margin-top: 50px;
-    }
-    .calendar h3 {
+    .gallery h3 {
       color: #e75480;
+      margin-bottom: 20px;
     }
-    .calendar ul {
-      list-style-type: none;
-      padding: 0;
+    .gallery img {
+      width: 200px;
+      height: auto;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
-    .calendar li {
-      font-size: 1.2em;
-      margin-bottom: 10px;
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    /* ซ่อน iframe เพลง */
+    .audio-player {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div class="heart-effect">💖</div>
-  <div class="snow-effect"></div>
-  
+
+  <!-- เพลงจาก YouTube เล่นอัตโนมัติ -->
+  <div class="audio-player">
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/aYW47a31jH4?autoplay=1&loop=1&playlist=aYW47a31jH4" frameborder="0" allow="autoplay"></iframe>
+  </div>
+
   <div class="card">
     <div class="heart">💖</div>
     <h1>ถึงเธอที่แสนดีของเค้า 💌</h1>
@@ -160,17 +122,13 @@
       – จากเค้าคนที่รักเธอหมดหัวใจ
     </p>
   </div>
-  
+
   <div class="gallery">
     <h3>รูปภาพความทรงจำของเรา 📸</h3>
-    <img src="https://i.pinimg.com/736x/9b/cf/db/9bcfdbdb38565088e8bbf368839a73d3.jpg" alt="Memory 1">
-    <img src="https://media.discordapp.net/attachments/1349889157312286831/1368589761144426548/VideoCapture_20250504-110017.jpg?ex=6818c60a&is=6817748a&hm=3a4d0f401aa22121e2c228901b6a39c6352556b5fabf73912bae5b909e0bb1f5&=&format=webp&width=328&height=583" alt="Memory 2">
-    <img src="https://i.pinimg.com/736x/30/fa/0a/30fa0a155a67cfc0b33b606fb94515b5.jpg" alt="Memory 3">
+    <img src="https://via.placeholder.com/200x200.png?text=รูปที่1" alt="Memory 1">
+    <img src="https://via.placeholder.com/200x200.png?text=รูปที่2" alt="Memory 2">
+    <img src="https://via.placeholder.com/200x200.png?text=รูปที่3" alt="Memory 3">
   </div>
 
-  <audio autoplay loop>
-    <source src="https://www.youtube.com/embed/aYW47a31jH4?autoplay=1" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
 </body>
 </html>
