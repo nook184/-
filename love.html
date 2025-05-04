@@ -22,7 +22,7 @@
       background-image: url('https://media.giphy.com/media/3oKIPtjElfqwMOTbH2/giphy.gif');
       background-size: cover;
       opacity: 0.15;
-      z-index: 1;
+      z-index: 0;
     }
 
     .card {
@@ -34,7 +34,7 @@
       border-radius: 20px;
       box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
       position: relative;
-      z-index: 2;
+      z-index: 10;
     }
 
     .card .heart {
@@ -65,7 +65,7 @@
     .gallery {
       text-align: center;
       padding: 30px;
-      z-index: 2;
+      z-index: 10;
       position: relative;
     }
 
@@ -92,8 +92,9 @@
       top: -10px;
       color: #fff;
       font-size: 1.5em;
-      z-index: 9999;
+      z-index: 1;
       animation: fall linear infinite;
+      pointer-events: none;
     }
 
     @keyframes fall {
@@ -107,18 +108,18 @@
       display: none;
     }
 
-    /* Hello Kitty เดิน */
     .hello-kitty {
       position: fixed;
       bottom: 10px;
       left: -150px;
       width: 100px;
       height: 100px;
-      background-image: url('https://media.tenor.com/zVvViQKqa0MAAAAi/psybirdb1oom.gif');
+      background-image: url('https://media.giphy.com/media/6BRQyQf0lJ9Kc/giphy.gif');
       background-size: contain;
       background-repeat: no-repeat;
-      z-index: 10;
+      z-index: 1;
       animation: walkkitty 20s linear infinite;
+      pointer-events: none;
     }
 
     @keyframes walkkitty {
@@ -161,7 +162,8 @@
       heart.style.top = "-30px";
       heart.style.fontSize = "24px";
       heart.style.opacity = "0.8";
-      heart.style.zIndex = 999;
+      heart.style.zIndex = 1;
+      heart.style.pointerEvents = "none";
       document.body.appendChild(heart);
       let fall = heart.animate([
         { transform: "translateY(0)" },
